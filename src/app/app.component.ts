@@ -10,6 +10,8 @@ import KeycloakAuthorization from "keycloak-js/dist/keycloak-authz";
 })
 export class AppComponent {
   title = 'keycloak-angular-god';
+  ticketId: string = '';
+  rptToken: string = '';
   private keycloak: Keycloak;
   private keycloakAuthorization: KeycloakAuthorization;
 
@@ -36,7 +38,8 @@ export class AppComponent {
 
  showRpt() {
    let authorizationRequest = {
-     "ticket": "2324ututy"
+     "ticket": this.ticketId,
+     "audience": "springboot-god"
    };
    this.keycloakAuthorization.authorize(authorizationRequest).then(rpt => {
      console.log(rpt)

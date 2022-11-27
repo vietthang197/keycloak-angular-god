@@ -21,8 +21,9 @@ export class KeycloakService {
       console.log(e)
       alert('failed to initialize');
     });
-    this.keycloak.onTokenExpired = ()=>{
-      this.keycloak.updateToken(30).then((refreshed)=>{
+    this.keycloak.onTokenExpired = () => {
+      console.log("============> Triggered token expired")
+      this.keycloak.updateToken(5).then((refreshed)=>{
         if (refreshed){
           console.log('refreshed '+new Date());
         }else {

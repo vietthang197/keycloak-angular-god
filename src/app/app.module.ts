@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {KeycloakService} from "./service/keycloak.service";
 import {AppRoutingModule} from "./app-routing.module";
+import { FormsModule } from '@angular/forms';
 
 function initializeKeycloak(appservice: KeycloakService) {
   return () => {};
@@ -15,7 +16,8 @@ function initializeKeycloak(appservice: KeycloakService) {
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     KeycloakService,

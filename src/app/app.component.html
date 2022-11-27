@@ -1,6 +1,11 @@
 <h1>Hello Angular god, login now</h1>
 <button (click)="doLogin()">Login</button>
-<button (click)="showRpt()">Show rpt</button>
+
 <button (click)="getUserInfo()">Get user info</button>
+
+<br>
+<span>Insert ticket: </span> <input type="text" [(ngModel)]="ticketId">
+<button (click)="showRpt()">Show rpt</button>
+<p>{{rptToken}}</p>
 
 
