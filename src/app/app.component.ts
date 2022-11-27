@@ -49,4 +49,19 @@ export class AppComponent {
      console.log('error')
    })
  }
+
+  createTicketRequest() {
+    let authorizationRequest = {
+      "ticket": this.ticketId,
+      "grant_type": "urn:ietf:params:oauth:grant-type:uma-ticket",
+      "submit_request": true
+    };
+    this.keycloakAuthorization.authorize(authorizationRequest).then(rpt => {
+      console.log(rpt)
+    }, () => {
+      console.log('deny')
+    }, () => {
+      console.log('error')
+    })
+  }
 }
